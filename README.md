@@ -2,6 +2,10 @@
 
 An `ncurses`-based Sudoku game.
 
+## building
+
+- `stack build`
+
 ## controls
 
 - `q` :: quit
