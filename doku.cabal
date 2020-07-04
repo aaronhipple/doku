@@ -1,0 +1,74 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4acd20b445a8dc1d9c360351ef4311ac09733da4a9f4773cea05e52452aa5765
+
+name:           doku
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/aaronhipple/doku#readme>
+homepage:       https://github.com/aaronhipple/doku#readme
+bug-reports:    https://github.com/aaronhipple/doku/issues
+author:         Aaron Hipple
+maintainer:     ahipple@gmail.com
+copyright:      Aaron Hipple
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/aaronhipple/doku
+
+library
+  exposed-modules:
+      DokuState
+      Draw
+      Lib
+      Loop
+  other-modules:
+      Paths_doku
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers >=0.6.2.1 && <0.7
+    , mtl >=2.2.2 && <3
+    , ncurses >=0.2.16 && <0.3
+  default-language: Haskell2010
+
+executable doku-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_doku
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers >=0.6.2.1 && <0.7
+    , doku
+    , mtl >=2.2.2 && <3
+    , ncurses >=0.2.16 && <0.3
+  default-language: Haskell2010
+
+test-suite doku-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_doku
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers >=0.6.2.1 && <0.7
+    , doku
+    , mtl >=2.2.2 && <3
+    , ncurses >=0.2.16 && <0.3
+  default-language: Haskell2010

@@ -1,0 +1,51 @@
+name:                doku
+version:             0.1.0.0
+github:              "aaronhipple/doku"
+license:             BSD3
+author:              "Aaron Hipple"
+maintainer:          "ahipple@gmail.com"
+copyright:           "Aaron Hipple"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/aaronhipple/doku#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- ncurses >= 0.2.16 && < 0.3
+- mtl >= 2.2.2 && < 3
+- containers >= 0.6.2.1 && < 0.7
+
+library:
+  source-dirs: src
+
+executables:
+  doku-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - doku
+
+tests:
+  doku-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - doku
